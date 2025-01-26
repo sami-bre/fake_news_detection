@@ -14,4 +14,4 @@ def read_root():
 @app.post("/predict/")
 def predict_news(news_item: NewsItem):
     prediction = predict(news_item.text)
-    return {"prediction": prediction}
+    return {"text": news_item.text, "result": prediction}
